@@ -1,0 +1,7 @@
+Poprawić 
+plik test_kompilacji_fail.c
+
+w ten sposób, aby output kompilacji był czysty.
+
+1) nie można zakomentowywać kodu,
+2) można zmieniać lub dopisywać linie kodu
