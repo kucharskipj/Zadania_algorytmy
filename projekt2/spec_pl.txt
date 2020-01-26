@@ -1,0 +1,88 @@
+Stworzenie aplikacji 'list', która przyjmuje nazwe pliku jako argument.
+Aplikacja zczyta komendy z pliku i wykona zawarte w nim instrukcje.
+
+list <file_name>
+
+******************************************************************
+
+Opis pliku:
+<ilosc_instrukcji> <instrukcja> <instrukcja> <instrukcja> ... <instrukcja>
+
+<ilosc_instrukcji> ---> liczba calkowita >= 0
+
+<instrukcja> ---> <id> <args>
+
+<id> ---> litera, która odpowiada poleceniu
+
+Lista poleceń poniżej:
+
+p - print - wypisanie wszystkich elementów (bez argumentów)
+a - append - dodanie elementu do końca listy (1 argument)
+c - clear - usunięcie wszystkich elementów (bez argumentów)
+d - delete - usunięcie elementu o określonym indeksie (1 argument)
+i - insert - wstawienie elementu w określone miejsce (2 argumenty)
+s - sort elements (no args)
+r - reverse list (no args)
+
+Wszelkie indeksowania są od zera.
+
+<instrukcje> są wykonywane w kolejności wczytywania, od lewej do prawej
+<args> argumenty, tak samo
+
+******************************************************************
+
+Przykłady:
+
+
+(pac)
+6 a 1 a 2 a 3 p c p
+    a 1 a 2 a 3 (dodanie trzech elementów, każdy nowy element na koniec listy)
+    p (wypisanie zawartości, wypisanie zaczyna się od ':')
+    c usunięcie wszystkich elementów 
+
+output:    
+    > :1 2 3
+    > :
+
+6 a 1 p a 3 p c p
+
+output:    
+    > :1
+    > :1 3
+    > :
+
+(pacd)
+12 a 1 a 2 a 3 a 4 a 5 p d 1 p d 3 p d 3 p
+    d (usunięcie n-tego elementu)
+
+output:
+    > :1 2 3 4 5
+    > :2 3 4 5
+    > :2 3 5
+    > :2 3
+
+(pacdi)
+5 a 1 a 2 a 3 i 0 99 p
+    i (dwa argumenty, index+wartosc, po operacji wartość będzie na pozycji index)
+    (elementy pozostałe są odpowiednio 'przesunięte')
+    > :1 2 3
+    > :99 1 2 3
+
+8 a 1 a 2 a 3 p i 2 99 p i 4 199 p
+    > :1 2 3
+    > :1 2 99 3
+    > :1 2 99 3 199
+
+(pacdisr)
+
+8 a 3 a 1 a 2 p s p r p
+    s (posortowanie listy)
+    r (odwrócenie listy)
+
+output:
+    > :3 1 2
+    > :1 2 3
+    > :3 2 1
+
+******************************************************************
+

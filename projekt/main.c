@@ -1,6 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+int get_num(FILE* f, int* res)
+{
+fscanf(f,"%d",res);
+return 0;
+}
+
+int get_char(FILE* f, char* cres)
+{
+fscanf(f,"%c",cres);
+return 0;
+}
+
+
 int main()
 {
 char *pend, *tekst;
@@ -11,7 +25,7 @@ char buff[32];
 
 fp=fopen("i1.txt","r");
 
-for (int i=0; i<=n;i++)
+/*for (int i=0; i<=n;i++)
 	{
 	fscanf(fp,"%s",buff);
 	val = strtol(buff,&pend,10);
@@ -29,6 +43,30 @@ for (int i=0; i<=n;i++)
 		else printf("%s element to liczba: %d\n", tekst, val);
 	}
 	}
+*/
+
+int amount, arg1, arg2;
+get_num(fp,&amount);
+printf("%d\n",amount);
+for(int i=0;i<1;i++)
+{
+char chr;
+get_char(&chr);
+get_char(&chr);
+switch(chr)
+{
+case 'i':
+	get_num(fp,&arg1);
+	get_num(fp,&arg2);
+	break;
+case 'a':
+	get_num(fp,&arg1);
+	break;
+}
+
+printf("i: %d\n", arg1);
+
+}
 
 fclose(fp);
 return 0;
